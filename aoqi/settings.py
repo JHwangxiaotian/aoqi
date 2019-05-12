@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3&rlppg($1$8j_&e&syt6l)prdq=7i@8t-+sb=jyv5s+^%x3*d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,9 +76,21 @@ WSGI_APPLICATION = 'aoqi.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'aoqi',
+        'NAME': 'ssis',
+        # 'USER': 'root',
+        'USER': 'prif0r',
+        # 'PASSWORD': 'root',
+        'PASSWORD': 'yq12345678',
+        # 'HOST': '127.0.0.1',
+        'HOST': '123.207.164.68',
+        'PORT': '3306'
     }
 }
 
